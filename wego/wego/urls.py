@@ -26,12 +26,6 @@ from wegoapi import views
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
-router.register(r'snippet_list',views.snippet_list)
-
-#
-
-
-
 
 
 # 使用自动的URL路由，让我们的API跑起来。
@@ -39,7 +33,5 @@ router.register(r'snippet_list',views.snippet_list)
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include(router.urls)),
-    url(r'^wego/$', views.snippet_list),
-    url(r'^wego/(?P<pk>[0-9]+)/$', views.snippet_detail),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
